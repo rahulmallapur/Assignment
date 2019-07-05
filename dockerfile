@@ -8,7 +8,7 @@ RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 RUN sed 's|#Banner.*|Banner /etc/ssh/before-login-banner|' /etc/ssh/sshd_config
 RUN mkdir /root/.ssh
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN echo 'Bash /motd.sh' >> /etc/bash.bashrc
+RUN echo 'bash /motd.sh' >> /etc/bash.bashrc
 COPY before-login-banner /etc/ssh/
 COPY motd.sh /etc/profile.d/
 COPY motd.sh /
