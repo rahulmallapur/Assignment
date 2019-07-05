@@ -1,0 +1,8 @@
+---
+- hosts: web
+  tasks:
+     - name: Deploying image
+       docker_container:
+         image: rahulmallapur22/ubuntu-sshd
+         state: started
+         name: sshd
